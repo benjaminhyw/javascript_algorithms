@@ -12,3 +12,9 @@
   3) Compare the two, and return true or false
 */
 
+function isPalindrome(str){
+  var originalArr = str.split("");
+  var reverseArr = str.split("").reverse();
+
+  return originalArr.join() == reverseArr.join()
+}
