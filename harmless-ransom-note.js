@@ -26,5 +26,20 @@
 */
 
 function harmlessNote(note, mag){
+  var noteArr = note.split("");
+  var magArr = mag.split("");
+  var noteMagArr = [];
+
+  for (var i=0; i < note.length; i++){
+    if !(magArray.includes?(noteArray[i])) {
+      return false;
+    }
+    else if (magArray.includes?(noteArray[i])) {
+      noteMagArr.push(noteArray[i]);
+      magArr.pop(WORD)
+    }
+    return true;
+  }
+
 
 }
