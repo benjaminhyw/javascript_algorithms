@@ -31,15 +31,13 @@ function harmlessNote(note, mag){
   var noteMagArr = [];
 
   for (var i=0; i < note.length; i++){
-    if !(magArr.includes(noteArr[i])) {
+    if (!(magArr.includes(noteArr[i]))) {
       return false;
     }
     else if (magArr.includes(noteArr[i])) {
       noteMagArr.push(noteArr[i]);
-      magArr.pop(WORD)
+      magArr.splice(magArr.indexOf(noteArr[i]), 1)
     }
     return true;
   }
-
-
 }
