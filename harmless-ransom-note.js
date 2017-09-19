@@ -30,7 +30,7 @@ function harmlessNote(note, mag){
   var magArr = mag.split(" ");
   var noteMagArr = [];
 
-  for (var i=0; i < note.length; i++){
+  for (var i=0; i < (note.length - 1); i++){
     if (!(magArr.includes(noteArr[i]))) {
       return false;
     }
