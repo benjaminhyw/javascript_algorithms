@@ -55,4 +55,18 @@ function harmlessNote(note, mag){
     }
     noteMagObj[word]++;
   })
+
+  var noteIsPossible = true;
+  noteArr.forEach(function(word){
+    if (noteMagObj[word]){
+      noteMagObj[word]--;
+      if (noteMagObj[word] < 0){
+        noteIsPossble = false;
+      }
+    } else {
+      noteIsPossible = false;
+    }
+  });
+
+  return noteIsPossible;
 }
