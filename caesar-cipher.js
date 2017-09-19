@@ -12,6 +12,7 @@
   
   1) Provide alphabet array
     1a) Maybe two arrays with half the alphabet each?
+    1b) Or just one array, but use the modulus operator..
   2) Turn string into array of individual letters
   3) Do math
     3a) If number is less <= 13, start at current array
@@ -21,3 +22,34 @@
     4a) If punctuation or empty space, leave as is
   5) Return new string
 */
+
+function caesarCipher(str, num){
+  str = str.toLowerCase();
+  var strArr = str.split("");
+  var newArr = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var alphabetArr = alphabet.split("");
+
+  var originalIndex = 0;
+
+  strArr.forEach(function(letter){
+    //Here we're saying if it's anything not inside the alphabet array, just push whatever that was inside the new array.  This covers spaces and punctuation
+    originalIndex = alphabetArr.indexOf(letter);
+    if (originalIndex == -1){
+      newArr.push(strArr[letter]);
+    } else if (num > 0) {
+      if (originalIndex + num > 26){
+        newArr.push(alphabetArr[(originalIndex + num) % 26]);
+      }
+      newArr.push(alphabetArr[originalIndex + num])
+    } else {
+      if ((originalIndex - num) < 0){
+        newArr.push(alphabetArr[(26-(originalIndex - num))])
+      }
+      newArr.push(alphabetArr[originalIndex - num])
+    }
+  });
+
+  return newArr.join("");
+
+}
