@@ -25,7 +25,7 @@
     ELSE IF there isn't a match, then that's enough already for you to return FALSE
 */
 
-// This first answer works, but is not optimal because it is O(n).  Will refactor below.
+// This first answer works, but is not optimal.  Will refactor below.
 
 // function harmlessNote(note, mag){
 //   var noteArr = note.split(" ");
@@ -49,7 +49,7 @@ function harmlessNote(note, mag){
   var magArr = mag.split(" ");
   var noteMagObj = {};
 
-  magArr.forEach(function(word){
+  magArr.forEach(word => {
     if (!noteMagObj[word]){
       noteMagObj[word] = 0;
     }
@@ -57,7 +57,7 @@ function harmlessNote(note, mag){
   })
 
   var noteIsPossible = true;
-  noteArr.forEach(function(word){
+  noteArr.forEach(word => {
     if (noteMagObj[word]){
       noteMagObj[word]--;
       if (noteMagObj[word] < 0){
