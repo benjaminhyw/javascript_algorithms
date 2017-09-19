@@ -26,8 +26,8 @@
 */
 
 function harmlessNote(note, mag){
-  var noteArr = note.split("");
-  var magArr = mag.split("");
+  var noteArr = note.split(" ");
+  var magArr = mag.split(" ");
   var noteMagArr = [];
 
   for (var i=0; i < note.length; i++){
