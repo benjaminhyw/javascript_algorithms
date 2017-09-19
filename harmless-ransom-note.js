@@ -43,3 +43,16 @@
 //   }
 //   return true;
 // }
+
+function harmlessNote(note, mag){
+  var noteArr = note.split(" ");
+  var magArr = mag.split(" ");
+  var noteMagObj = {};
+
+  magArr.forEach(function(word){
+    if (!noteMagObj[word]){
+      noteMagObj[word] = 0;
+    }
+    noteMagObj[word]++;
+  })
+}
