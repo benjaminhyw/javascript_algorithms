@@ -31,10 +31,10 @@ function harmlessNote(note, mag){
   var noteMagArr = [];
 
   for (var i=0; i < (note.length - 1); i++){
-    if (!(magArr.includes(noteArr[i]))) {
+    if  ((noteArr.length != noteMagArr.length) && (!(magArr.includes(noteArr[i])))) {
       return false;
     }
-    else if((noteArr.length != noteMagArr.length) && (magArr.includes(noteArr[i]))) {
+    else if(magArr.includes(noteArr[i])) {
       noteMagArr.push(noteArr[i]);
       magArr.splice(magArr.indexOf(noteArr[i]), 1)
     }
