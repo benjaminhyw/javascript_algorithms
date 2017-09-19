@@ -38,6 +38,6 @@ function harmlessNote(note, mag){
       noteMagArr.push(noteArr[i]);
       magArr.splice(magArr.indexOf(noteArr[i]), 1)
     }
-    return true;
   }
+  return true;
 }
