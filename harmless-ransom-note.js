@@ -31,11 +31,11 @@ function harmlessNote(note, mag){
   var noteMagArr = [];
 
   for (var i=0; i < note.length; i++){
-    if !(magArray.includes(noteArray[i])) {
+    if !(magArr.includes(noteArr[i])) {
       return false;
     }
-    else if (magArray.includes(noteArray[i])) {
-      noteMagArr.push(noteArray[i]);
+    else if (magArr.includes(noteArr[i])) {
+      noteMagArr.push(noteArr[i]);
       magArr.pop(WORD)
     }
     return true;
