@@ -12,9 +12,20 @@
   3) Compare the two, and return true or false
 */
 
-function isPalindrome(str){
-  var originalArr = str.split("");
-  var reverseArr = str.split("").reverse();
+// NOTE:
+// In the code below, we remove punctuation marks by comparing each character to the ones inside the validCharacters array.  indexOf returns an index value of -1 IF the character provided doesn't exist inside the array it's checking.  Therefore, the code only pushes valid characters with an index higher than -1.
 
-  return originalArr.join() == reverseArr.join()
+function isPalindrome(str){
+  str = str.toLowerCase();
+  var originalArr = str.split("");
+  var validCharacters = 'abcdefghijklmnopqrstuvwxyz';
+
+  var lettersArr = [];
+  originalArr.forEach(function(char){
+    if (validCharacters.indexOf(char) > -1){
+      lettersArr.push(char)
+    }
+  })
+
+  return (lettersArr.join() == lettersArr.reverse().join());
 }
