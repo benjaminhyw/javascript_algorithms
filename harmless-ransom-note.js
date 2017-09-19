@@ -25,19 +25,21 @@
     ELSE IF there isn't a match, then that's enough already for you to return FALSE
 */
 
-function harmlessNote(note, mag){
-  var noteArr = note.split(" ");
-  var magArr = mag.split(" ");
-  var noteMagArr = [];
+// This first answer works, but is not optimal because it is O(n).  Will refactor below.
 
-  for (var i=0; i < (note.length - 1); i++){
-    if  ((noteArr.length != noteMagArr.length) && (!(magArr.includes(noteArr[i])))) {
-      return false;
-    }
-    else if(magArr.includes(noteArr[i])) {
-      noteMagArr.push(noteArr[i]);
-      magArr.splice(magArr.indexOf(noteArr[i]), 1)
-    }
-  }
-  return true;
-}
+// function harmlessNote(note, mag){
+//   var noteArr = note.split(" ");
+//   var magArr = mag.split(" ");
+//   var noteMagArr = [];
+
+//   for (var i=0; i < (note.length - 1); i++){
+//     if  ((noteArr.length != noteMagArr.length) && (!(magArr.includes(noteArr[i])))) {
+//       return false;
+//     }
+//     else if(magArr.includes(noteArr[i])) {
+//       noteMagArr.push(noteArr[i]);
+//       magArr.splice(magArr.indexOf(noteArr[i]), 1)
+//     }
+//   }
+//   return true;
+// }
