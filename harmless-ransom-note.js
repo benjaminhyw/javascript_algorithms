@@ -32,7 +32,7 @@
 //   var magArr = mag.split(" ");
 //   var noteMagArr = [];
 
-//   for (var i=0; i < (note.length - 1); i++){
+//   for (var i=0; i < (noteArr.length - 1); i++){
 //     if  ((noteArr.length != noteMagArr.length) && (!(magArr.includes(noteArr[i])))) {
 //       return false;
 //     }
