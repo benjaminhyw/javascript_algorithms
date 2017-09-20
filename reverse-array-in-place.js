@@ -23,5 +23,12 @@
 
 function reverseArray(arr){
   var count = arr.length;
+  var stopper = arr[count - 1];
 
+  for (var i = 0; i < count; i++){
+    arr.push(arr[arr.indexOf(stopper) - 1]);
+    arr.splice((arr.indexOf(stopper) - 1), 1);
+  }
+
+  return arr;
 }
