@@ -27,3 +27,18 @@
     2b) Return object
 */
 
+function getMean(arr){
+
+}
+
+function getMedian(arr){
+  
+}
+
+function getMode(arr){
+  
+}
+
+function meanMedianMode(arr){
+  
+}
