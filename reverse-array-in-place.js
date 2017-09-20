@@ -21,13 +21,25 @@
   3) When done, return reversed array
 */
 
-function reverseArray(arr){
-  var count = arr.length;
-  var stopper = arr[count - 1];
+// This is the solution I came up with and it works!  But, will add the course solution underneath.  Considerably faster, since it only loops through half of the array rather than the whole array like mine does.
 
-  for (var i = 0; i < count; i++){
-    arr.push(arr[arr.indexOf(stopper) - 1]);
-    arr.splice((arr.indexOf(stopper) - 1), 1);
+// function reverseArray(arr){
+//   var count = arr.length;
+//   var stopper = arr[count - 1];
+
+//   for (var i = 0; i < count; i++){
+//     arr.push(arr[arr.indexOf(stopper) - 1]);
+//     arr.splice((arr.indexOf(stopper) - 1), 1);
+//   }
+
+//   return arr;
+// }
+
+function reverseArrayInPlace(arr) {
+  for (var i = 0; i < arr.length / 2; i++) {
+    var tempVar = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = tempVar;
   }
 
   return arr;
