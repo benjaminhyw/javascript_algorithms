@@ -52,7 +52,28 @@ function getMedian(arr){
 }
 
 function getMode(arr){
-  
+  var obj = {}
+  var mode = [];
+  var modeHigh = 0;
+
+  for (var i = 0; i < arr.length; i++){
+    if (!obj[arr[i]]){
+      obj[arr[i]] = 0;
+    }
+    obj[arr[i]]++;
+  }
+
+  for (var key in obj){
+    if (obj[key] == modeHigh){
+      mode.push(parseInt(key))
+    }
+    else if (obj[key] > modeHigh){
+      modeHigh = obj[key];
+      mode = [parseInt(key)]
+    }
+  }
+
+  return mode;
 }
 
 function meanMedianMode(arr){
