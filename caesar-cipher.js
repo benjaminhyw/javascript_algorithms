@@ -23,32 +23,32 @@
   5) Return new string
 */
 
-function caesarCipher(str, num){
-  str = str.toLowerCase();
-  var strArr = str.split("");
-  var newArr = [];
-  var alphabet = "abcdefghijklmnopqrstuvwxyz";
-  var alphabetArr = alphabet.split("");
+// function caesarCipher(str, num){
+//   str = str.toLowerCase();
+//   var strArr = str.split("");
+//   var newArr = [];
+//   var alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   var alphabetArr = alphabet.split("");
 
-  var originalIndex = 0;
+//   var originalIndex = 0;
 
-  strArr.forEach(function(letter){
-    originalIndex = alphabetArr.indexOf(letter);
-    if (originalIndex == -1){
-      newArr.push(letter);
-    } else {
-      if (num > 0){
-        if ((originalIndex + num) > 25){
-          newArr.push(alphabetArr[(originalIndex + num) % 26]);
-        }
-        newArr.push(alphabetArr[originalIndex + num]);
-      } else if (num < 0){
-        if ((originalIndex + num) < 0){
-          newArr.push(alphabetArr[(26 + num)])
-        }
-        newArr.push(alphabetArr[originalIndex + num]);
-      }
-    };
-  });
-  return newArr.join("");
-}
+//   strArr.forEach(function(letter){
+//     originalIndex = alphabetArr.indexOf(letter);
+//     if (originalIndex == -1){
+//       newArr.push(letter);
+//     } else {
+//       if (num > 0){
+//         if ((originalIndex + num) > 25){
+//           newArr.push(alphabetArr[(originalIndex + num) % 26]);
+//         }
+//         newArr.push(alphabetArr[originalIndex + num]);
+//       } else if (num < 0){
+//         if ((originalIndex + num) < 0){
+//           newArr.push(alphabetArr[(26 + num)])
+//         }
+//         newArr.push(alphabetArr[originalIndex + num]);
+//       }
+//     };
+//   });
+//   return newArr.join("");
+// }
