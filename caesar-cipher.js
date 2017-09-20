@@ -33,11 +33,9 @@ function caesarCipher(str, num){
   var originalIndex = 0;
 
   strArr.forEach(function(letter){
-    //Here we're saying if it's anything not inside the alphabet array, just push whatever that was inside the new array.  This covers spaces and punctuation
     originalIndex = alphabetArr.indexOf(letter);
     if (originalIndex == -1){
-      //It goes in here when it needs to, but the push underneath this comment doesn't work correctly
-      newArr.push(strArr[letter]);
+      newArr.push(letter);
     } else {
       if (num > 0){
         if ((originalIndex + num) > 25){
