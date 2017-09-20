@@ -14,8 +14,14 @@
 /*PSEUDOCODE
 
   1) Find array length
-  2) Until last element is first element, 
-    2a) Push first element to end of array
-    2b) Splice first element out of there
-  3) When done, return array
+  2) Create variable "stopper" for last element in array
+  2) (array.length - 1) times do:
+    2a) Push element previous to "stopper" to the end of the array
+    2b) Splice that same element out from in front of 'stopper'
+  3) When done, return reversed array
 */
+
+function reverseArray(arr){
+  var count = arr.length;
+
+}
