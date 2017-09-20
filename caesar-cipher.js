@@ -36,20 +36,21 @@ function caesarCipher(str, num){
     //Here we're saying if it's anything not inside the alphabet array, just push whatever that was inside the new array.  This covers spaces and punctuation
     originalIndex = alphabetArr.indexOf(letter);
     if (originalIndex == -1){
+      //It goes in here when it needs to, but the push underneath this comment doesn't work correctly
       newArr.push(strArr[letter]);
-    } else if (num > 0) {
-      if (originalIndex + num > 26){
-        newArr.push(alphabetArr[(originalIndex + num) % 26]);
-      }
-      newArr.push(alphabetArr[originalIndex + num])
     } else {
-      if ((originalIndex - num) < 0){
-        newArr.push(alphabetArr[(26-(originalIndex - num))])
+      if (num > 0){
+        if ((originalIndex + num) > 25){
+          newArr.push(alphabetArr[(originalIndex + num) % 26]);
+        }
+        newArr.push(alphabetArr[originalIndex + num]);
+      } else if (num < 0){
+        if ((originalIndex - num) < 0){
+          newArr.push(alphabetArr[(25 - (originalIndex - num))])
+        }
+        newArr.push(alphabetArr[originalIndex - num]);
       }
-      newArr.push(alphabetArr[originalIndex - num])
-    }
+    };
   });
-
   return newArr.join("");
-
 }
