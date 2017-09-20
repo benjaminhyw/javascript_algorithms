@@ -45,10 +45,10 @@ function caesarCipher(str, num){
         }
         newArr.push(alphabetArr[originalIndex + num]);
       } else if (num < 0){
-        if ((originalIndex - num) < 0){
-          newArr.push(alphabetArr[(25 - (originalIndex - num))])
+        if ((originalIndex + num) < 0){
+          newArr.push(alphabetArr[(26 + num)])
         }
-        newArr.push(alphabetArr[originalIndex - num]);
+        newArr.push(alphabetArr[originalIndex + num]);
       }
     };
   });
