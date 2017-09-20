@@ -73,6 +73,9 @@ function getMode(arr){
     }
   }
 
+  if (mode.length === Object.keys(obj).length){
+    mode = [];
+  }
   return mode;
 }
 
