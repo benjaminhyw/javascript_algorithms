@@ -77,5 +77,9 @@ function getMode(arr){
 }
 
 function meanMedianMode(arr){
-  
+  return {
+    mean: getMean(arr),
+    median: getMedian(arr),
+    mode: getMode(arr)
+  }
 }
