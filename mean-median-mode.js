@@ -37,7 +37,18 @@ function getMean(arr){
 }
 
 function getMedian(arr){
-  
+  var length = arr.length;
+  var middlePoint = (length / 2)
+  arr = arr.sort(function(a, b){return a - b});
+
+  if (Number.isInteger(middlePoint)){
+    if (arr[middlePoint - 1] == arr[middlePoint]){
+      return arr[middlePoint]
+    }
+    return ((arr[middlePoint - 1] + arr[middlePoint]) / 2);
+  } else {
+    return arr[Number.parseInt(middlePoint)];
+  }
 }
 
 function getMode(arr){
