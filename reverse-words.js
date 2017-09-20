@@ -21,3 +21,21 @@
   4) Return new string
 */
 
+function reverseWords(str){
+  var strArr = str.split(" ");
+  var emptyWordArr = [];
+  var emptyStrArr = [];
+  var index = 0;
+
+  strArr.forEach(function(word){
+    word = word.split('');
+    index = (word.length);
+    while (index > -1){
+      emptyWordArr.push(word[index])
+      index--;
+    }
+    emptyStrArr.push(emptyWordArr.join(''));
+    emptyWordArr = [];
+  });
+  return emptyStrArr.join(' ');
+}
