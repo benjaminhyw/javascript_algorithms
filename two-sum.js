@@ -26,3 +26,18 @@
           Move on to next pair to try and add
       Return final array
 */
+
+function twoSum(numArr, sum){
+  var sumArr = []
+  numArr.forEach(function(number){
+    for(var i = 0; i < numArr.length; i ++){
+      if (number == numArr[i]){
+        i++;
+      }
+      if ((number + numArr[i]) == sum){
+        sumArr.push([number, numArr[i]])
+      }
+    }
+  })
+  return sumArr;
+}
