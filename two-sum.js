@@ -41,3 +41,24 @@ function twoSum(numArr, sum){
   })
   return sumArr;
 }
+
+/*PSEUDOCODE (HASH TABLE)
+  1)Create object (or array in this case, you just need to see if this number exists even just once)
+  2)Make each number in numArr a key, and make the value the number of times they come up
+  3)Loop through the numbers, and subtract from sum
+      Whatever the remainder is, check the object to see if that number is included.
+      If it is, pair those up and push to array
+      Else, move on to the next number in the iteration
+*/
+
+function twoSum(numArr, sum){
+  var sumArr = [];
+
+  numArr.forEach(function(number){
+    var diff = sum - number;
+    if (numArr.includes(diff)){
+      sumArr.push([number, diff])
+    }
+  })
+  return sumArr;
+}
