@@ -53,12 +53,17 @@ function twoSum(numArr, sum){
 
 function twoSum(numArr, sum){
   var sumArr = [];
+  var diffArr = [];
 
-  numArr.forEach(function(number){
-    var diff = sum - number;
-    if (numArr.includes(diff)){
-      sumArr.push([number, diff])
+  for (var i = 0; i < numArr.length; i++){
+    var currNum = numArr[i];
+    var diff =  sum - currNum;
+
+    if (diffArr.indexOf(diff) !== -1){
+      sumArr.push([currNum, diff]);
     }
-  })
+    diffArr.push(currNum)
+  }
+
   return sumArr;
 }
