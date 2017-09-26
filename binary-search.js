@@ -23,3 +23,53 @@
     2c) Repeat process, and up a counter variable one
   3) Return true statement
 */
+
+function binarySearch(numArr, key){
+  var newNumArr = numArr;
+  var size = newNumArr.length
+  var middleIndex = 0;
+  var count = 0;
+
+  if ((size%2) === 0){
+    middleIndex = (size/2);
+  } else {
+    middleIndex = ((size/2) - .5);
+  }
+
+  if ((newNumArr[middleIndex] != key) && (size == 1)){
+    return false
+  } else if (newNumArr[middleIndex] == key){
+    return 'True!  It took ' + count + ' times';
+  } else {
+    count++;
+    if (key > newNumArr[middleIndex]){
+      // console.log("key: " + key + " | mid: " + newNumArr[middleIndex] )
+      // console.log("count: " + count)
+      // console.log(size)
+      // console.log(middleIndex)
+      console.log("Greater than")
+      console.log(newNumArr)
+
+      // Delete the first half
+      newNumArr = newNumArr.splice(middleIndex, (size - middleIndex));
+
+      // Call recursive function
+      return binarySearch(newNumArr, key);
+
+    } else {
+      // console.log("key: " + key + " | mid: " + newNumArr[middleIndex] )
+      // console.log("count: " + count)
+      // console.log(size)
+      // console.log(middleIndex)
+      console.log("Lower than")
+      console.log(newNumArr)
+
+      // Delete the second half
+      newNumArr = newNumArr.splice(0, (size - middleIndex));
+
+      // Call recursive function
+      return binarySearch(newNumArr, key);
+
+    }
+  }
+}
