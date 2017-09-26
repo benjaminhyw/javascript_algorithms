@@ -24,11 +24,11 @@
   3) Return true statement
 */
 
-function binarySearch(numArr, key){
+function binarySearch(numArr, key, count){
   var newNumArr = numArr;
   var size = newNumArr.length
   var middleIndex = 0;
-  var count = 0;
+  var iterationCount = count || 1;
 
   if ((size%2) === 0){
     middleIndex = (size/2);
@@ -39,12 +39,11 @@ function binarySearch(numArr, key){
   if ((newNumArr[middleIndex] != key) && (size == 1)){
     return false
   } else if (newNumArr[middleIndex] == key){
-    return 'True!  It took ' + count + ' times';
+    return 'True!  It took ' + iterationCount + ' times';
   } else {
-    count++;
     if (key > newNumArr[middleIndex]){
       // console.log("key: " + key + " | mid: " + newNumArr[middleIndex] )
-      // console.log("count: " + count)
+      // console.log("iterationCount: " + iterationCount)
       // console.log(size)
       // console.log(middleIndex)
       console.log("Greater than")
@@ -54,11 +53,11 @@ function binarySearch(numArr, key){
       newNumArr = newNumArr.splice(middleIndex, (size - middleIndex));
 
       // Call recursive function
-      return binarySearch(newNumArr, key);
+      return binarySearch(newNumArr, key, (iterationCount + 1));
 
     } else {
       // console.log("key: " + key + " | mid: " + newNumArr[middleIndex] )
-      // console.log("count: " + count)
+      // console.log("iterationCount: " + iterationCount)
       // console.log(size)
       // console.log(middleIndex)
       console.log("Lower than")
@@ -68,7 +67,7 @@ function binarySearch(numArr, key){
       newNumArr = newNumArr.splice(0, (size - middleIndex));
 
       // Call recursive function
-      return binarySearch(newNumArr, key);
+      return binarySearch(newNumArr, key, (iterationCount + 1));
 
     }
   }
