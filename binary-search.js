@@ -72,3 +72,19 @@ function binarySearch(numArr, key, count){
     }
   }
 }
+
+// Below is the course answer.  I'm leaving it commented, since it has less work worked out of it than my answer.  My answer adds a count and responds as a sentence.  The class response only returns true or false if an element is inside the array.
+
+// function binarySearch(numArray, key) {
+//   var middleIdx = Math.floor(numArray.length / 2);
+//   var middleElem = numArray[middleIdx];
+
+//   if (middleElem === key) return true;
+//   else if (middleElem < key && numArray.length > 1) {
+//       return binarySearch(numArray.splice(middleIdx, numArray.length), key);
+//   }
+//   else if (middleElem > key && numArray.length > 1) {
+//       return binarySearch(numArray.splice(0, middleIdx), key);
+//   }
+//   else return false;
+// }
