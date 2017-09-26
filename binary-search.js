@@ -25,7 +25,7 @@
 */
 
 function binarySearch(numArr, key, count){
-  var newNumArr = numArr;
+  var newNumArr = numArr.sort(function(a, b){return a-b});
   var size = newNumArr.length
   var middleIndex = 0;
   var iterationCount = count || 1;
