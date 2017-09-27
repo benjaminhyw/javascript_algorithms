@@ -19,3 +19,12 @@
     1a) If position == 1 || 2, return 1
   2) Otherwise, loop through the number of times indicated via position
 */
+
+//NOTE**: This is a good exercise problem, but the time complexity is O(2^n), which is terrible.
+
+function fibonacci(position){
+  if (position < 3){
+    return 1;
+  }
+  return fibonacci(position - 1) + fibonacci(position - 2);
+}
