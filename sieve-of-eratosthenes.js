@@ -14,4 +14,7 @@
 
 function sieveOfEratosthenes(num){
   var squareRoot = Math.sqrt(num);
+  var arr = [...Array(num + 1)].map((x, i) => i)
+
+
 }
