@@ -17,3 +17,20 @@
   3) Return bubble sorted array
 */
 
+function bubbleSort(arr){
+  var length = arr.length;
+
+  for (var i = length; i > 0; i--){
+
+    for (var j = 0; j < i; j++){
+      var tempHolder = 0;
+      if (arr[j] > arr[j + 1]){
+        tempholder = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = tempholder;
+      }
+    }
+
+  }
+return arr
+}
