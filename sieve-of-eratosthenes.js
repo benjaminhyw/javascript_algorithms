@@ -14,7 +14,12 @@
 
 function sieveOfEratosthenes(num){
   var squareRoot = Math.sqrt(num);
-  var arr = [...Array(num + 1)].map((x, i) => i)
+  var primes = [];
 
+  for (var i = 0; i <= n; i++){
+    primes[i] = true;
+  }
 
+  primes[0] = false;
+  primes[1] = false;
 }
