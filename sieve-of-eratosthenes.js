@@ -12,8 +12,8 @@
   4) Return array
 */
 
-function sieveOfEratosthenes(num){
-  var squareRoot = Math.sqrt(num);
+function sieveOfEratosthenes(n){
+  var squareRoot = Math.sqrt(n);
   var primes = [];
 
   for (var i = 0; i <= n; i++){
@@ -22,4 +22,20 @@ function sieveOfEratosthenes(num){
 
   primes[0] = false;
   primes[1] = false;
+
+  for (var i = 2; i <= squareRoot; i++){
+    for (var j = 2; j * i <= n; j++){
+      primes[i * j] = false;
+    }
+  }
+
+  var result = []
+  for (var i = 0; i < primes.length; i++){
+    if (primes[i]){
+      result.push(i)
+    }
+  }
+
+  return result;
+
 }
