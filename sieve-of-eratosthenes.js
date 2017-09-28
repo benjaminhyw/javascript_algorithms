@@ -11,3 +11,7 @@
   3) Loop through numbers, but stop until square root (if a float, stop after number rounded up?)
   4) Return array
 */
+
+function sieveOfEratosthenes(num){
+  var squareRoot = Math.sqrt(num);
+}
