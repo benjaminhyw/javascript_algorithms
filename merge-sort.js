@@ -27,9 +27,13 @@
 function mergeSort(arr){
   // Split up an array into two arrays
   // You're gonna have to call this recursively until each array.length  == 1;
+
+  //Base Case
   if (arr.length < 2){
     return arr;
   }
+
+  // Main functionality
   var length = arr.length;
   var midPoint = Math.floor(arr.length/2);
   var firstHalf = arr.splice(0, midPoint);
@@ -41,4 +45,5 @@ function mergeSort(arr){
 function merge(arr1, arr2){
   // Compare the first value of each array with each other.
   // Do this for every
+
 }
