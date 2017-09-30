@@ -23,3 +23,13 @@
   5) Final merge 
   6) Return final array
 */
+
+function mergeSort(arr){
+  // Split up an array into two arrays
+  // You're gonna have to call this recursively until each array.length  == 1;
+}
+
+function merge(arr1, arr2){
+  // Compare the first value of each array with each other.
+  // Do this for every
+}
