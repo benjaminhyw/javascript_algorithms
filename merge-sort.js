@@ -27,6 +27,15 @@
 function mergeSort(arr){
   // Split up an array into two arrays
   // You're gonna have to call this recursively until each array.length  == 1;
+  if (arr.length < 2){
+    return arr;
+  }
+  var length = arr.length;
+  var midPoint = Math.floor(arr.length/2);
+  var firstHalf = arr.splice(0, midPoint);
+  var secondHalf = arr.splice(midpoint, length);
+
+  return merge(mergeSort(firstHalf), mergeSort(secondHalf));
 }
 
 function merge(arr1, arr2){
