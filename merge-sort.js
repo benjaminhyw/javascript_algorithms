@@ -36,8 +36,8 @@ function mergeSort(arr){
   // Main functionality
   var length = arr.length;
   var midPoint = Math.floor(arr.length/2);
-  var firstHalf = arr.splice(0, midPoint);
-  var secondHalf = arr.splice(midpoint, length);
+  var firstHalf = arr.slice(0, midPoint);
+  var secondHalf = arr.slice(midPoint);
 
   return merge(mergeSort(firstHalf), mergeSort(secondHalf));
 }
@@ -45,5 +45,22 @@ function mergeSort(arr){
 function merge(arr1, arr2){
   // Compare the first value of each array with each other.
   // Do this for every
+  var result = [];
 
+  while(arr1.length && arr2.length){
+    var minElement;
+    if (arr1[0] < arr2[0]){
+      minElement = arr1.shift();
+    } else {
+      minElement = arr2.shift();
+    }
+    result.push(minElement);
+  }
+
+  if (arr1.length){
+    result = result.concat(arr1);
+  } else {
+    result = result.concat(arr2);
+  }
+  return result;
 }
