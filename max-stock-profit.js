@@ -17,3 +17,27 @@
     3a) If 0 || positive number,  return profit
     3b) Else, return -1
 */
+
+function maxStockProfit(arr){
+  var maxProfit = -1;
+  var buyPrice = 0;
+  var sellPrice = 0;
+
+  var changeBuyPrice = true;
+
+  for (var i = 0; i < arr.length; i++){
+    if (changeBuyPrice){
+      buyPrice = arr[i];
+    }
+    sellPrice = arr[i + 1];
+
+    if (sellPrice < buyPrice){
+      changeBuyPrice = true;
+    } else {
+      var tempProfit = sellPrice - buyPrice;
+      if (tempProfit > maxProfit) maxProfit = tempProfit;
+      changeBuyPrice = false;
+    }
+  }
+  return maxProfit;
+}
